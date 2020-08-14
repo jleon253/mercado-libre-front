@@ -1,0 +1,9 @@
+body{
+  background-color: $c-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, button{
+  outline: none;
+}
