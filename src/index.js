@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'normalize.css';
 import 'bootstrap-4-grid';
+import 'material-design-icons';
 import './css/index.css';
 
 import App from './App';

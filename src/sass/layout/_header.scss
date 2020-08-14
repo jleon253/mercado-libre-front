@@ -14,10 +14,13 @@
     width: calc(100% - 40px);
     padding-left: 10px;
     padding-right: 10px;
+    background-color: $c-w;
     @include b-radius(5px,0,5px,0);
-    @include transition(box-shadow, 0.5s);
     &:focus{
       @include shadow(1);
+    }
+    &:-internal-autofill-selected{
+      background-color: $c-w;
     }
   }
   &__button{
@@ -26,10 +29,12 @@
     @include b-radius(0,5px,0,5px);
     &:hover{
       cursor: pointer;
+      @include shadow(1);
     }
   }
   &__input,&__button{
     border: 0;
+    @include transition(box-shadow, 0.5s);
   }
   &__icon{
     width: 15px;

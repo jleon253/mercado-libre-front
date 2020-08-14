@@ -1,0 +1,12 @@
+.breadcrumbs{
+  color: $c-graydark;
+  font-size: $f-small;
+  &__item{
+    &:not(:last-child){
+      &::after{
+        content: '>';
+        margin: 0px 10px;
+      }
+    }
+  }
+}

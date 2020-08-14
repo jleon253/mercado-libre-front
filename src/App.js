@@ -1,12 +1,23 @@
 import React from 'react';
 import Header from './components/Header';
-//import logo from './logo.svg';
+import Breadcrumbs from './components/Breadcrumbs';
+import Products from './components/Products';
+
+import ProductsProvider from './context/ProductsContext';
 
 function App() {
   return (
-    <div className="App">
+    <ProductsProvider>
       <Header />
-    </div>
+      <section className="container">
+        <div className="row">
+          <div className="col-12 my-3">
+            <Breadcrumbs />
+          </div>
+        </div>
+      </section>
+      <Products />
+    </ProductsProvider>
   );
 }
 
