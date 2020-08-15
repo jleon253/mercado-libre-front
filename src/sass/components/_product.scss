@@ -1,7 +1,7 @@
 .product{
   background-color: $c-w;
   margin-bottom: 1px;
-  &:first-child{
+  &:first-of-type{
     @include b-radius(5px,5px,0,0);
   }
   &:last-child{
