@@ -5,7 +5,7 @@ export const ProductsContext = createContext();
 const ProductsProvider = (props) => {
 
   const [queryProduct, setQueryProduct] = useState('');
-  const [paging, setPaging] = useState({});
+  const [paging, setPaging] = useState(null);
   const [productsList, setProductsList] = useState([]);
   const [breadcrumbs, setBreadcrumbs] = useState([]);
 
@@ -19,7 +19,7 @@ const ProductsProvider = (props) => {
       console.log('Result API', data.results)
       setProductsList(data.results)
       setBreadcrumbs(data.filters)
-      setPaging(data.paging)
+      setPaging(data.paging.total)
     }
     getAPIProducts()
   }, [queryProduct]);

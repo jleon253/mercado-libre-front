@@ -127,6 +127,11 @@ a {
   margin-left: 5px;
 }
 
+.message {
+  background-color: #fff;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.13), 0 10px 40px rgba(0, 0, 0, 0.19);
+}
+
 .header {
   background-color: #FFE600;
 }
