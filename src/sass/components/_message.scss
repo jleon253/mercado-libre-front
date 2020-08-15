@@ -1,0 +1,4 @@
+.message{
+  background-color: $c-w;
+  @include shadow(3);
+}
