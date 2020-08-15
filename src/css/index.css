@@ -118,14 +118,21 @@ a {
     width: 100%;
   }
 }
+.product .free__icon {
+  width: 15px;
+  margin-left: 5px;
+}
 
 .header {
   background-color: #FFE600;
 }
 .header__logo {
-  width: 80%;
-  max-width: 90%;
-  min-width: 70%;
+  width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  .header__logo {
+    width: 100%;
+  }
 }
 
 .search {

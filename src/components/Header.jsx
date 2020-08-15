@@ -24,10 +24,10 @@ const Header = () => {
 		<header className='header py-3'>
 			<div className='container'>
 				<div className='row px-sm-1'>
-					<div className='col-2 px-sm-1 d-flex'>
+					<div className='col-3 col-md-2 px-sm-1 d-flex'>
 						<img src={logo} alt='Mercado Libre Logo' className='header__logo' />
 					</div>
-					<div className='col-10 px-sm-1'>
+					<div className='col-9 col-md-10 px-sm-1'>
 						<form onSubmit={handlerSubmit}>
 							<div className='search d-flex'>
 								<input

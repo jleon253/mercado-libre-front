@@ -1,9 +1,10 @@
 .header{
   background-color: $c-primary;
   &__logo{
-    width: 80%;
-    max-width: 90%;
-    min-width: 70%;
+    width: 60%;
+    @include media(mobile-only){
+      width: 100%;
+    }
   }
 }
 
