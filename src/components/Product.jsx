@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import currency from 'currency.js'
 import freeIcon from '../assets/shipping.svg'
 
 const Product = ({ product }) => {
-	let title, price, free, stateName
-	if (!product) return
-	title = product.title
-	price = product.price
-	free = product.shipping.free_shipping
-	stateName = product.seller_address.state.name
+  let title, price, free, stateName;
+  if(!product) return;
+  title = product.title;
+  price = product.price;
+  free = product.shipping.free_shipping;
+  stateName = product.seller_address.state.name;
 	return (
-		<div className='col-12 p-3 product'>
+		<Fragment>
 			<div className='row'>
 				<div className='col-4 d-flex justify-content-center align-items-center'>
 					<img
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
 					<p className='small-size light'>{stateName}</p>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	)
 }
 

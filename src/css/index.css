@@ -86,7 +86,6 @@ a {
 
 .breadcrumbs {
   color: #666;
-  font-size: 0.85rem;
   flex-wrap: wrap;
 }
 .breadcrumbs__item {
@@ -125,6 +124,11 @@ a {
 .product .free__icon {
   width: 15px;
   margin-left: 5px;
+}
+
+.product-detail {
+  background-color: #fff;
+  box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.14), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
 
 .message {
