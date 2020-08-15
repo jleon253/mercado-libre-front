@@ -28,22 +28,34 @@
 
 .bigger-size{
   font-size: $f-bigger;
+  @include media(mobile-only){
+    font-size: $f-bigger - 0.25;
+  }
 }
 
 .big-size{
   font-size: $f-big;
+  @include media(mobile-only){
+    font-size: $f-big - 0.25;
+  }
 }
 
 .normal-size{
   font-size: $f-normal;
+  @include media(mobile-only){
+    font-size: $f-normal - 0.25;
+  }
 }
 
 .small-size{
   font-size: $f-small;
+  @include media(mobile-only){
+    font-size: $f-xsmall;
+  }
 }
 
 .xsmall-size{
-  font-size: $f-xsmall;
+  font-size: $f-xsmall - 0.25;
 }
 
 .free{

@@ -39,21 +39,41 @@ a {
 .bigger-size {
   font-size: 1.5rem;
 }
+@media only screen and (max-width: 768px) {
+  .bigger-size {
+    font-size: 1.25rem;
+  }
+}
 
 .big-size {
   font-size: 1.25rem;
+}
+@media only screen and (max-width: 768px) {
+  .big-size {
+    font-size: 1rem;
+  }
 }
 
 .normal-size {
   font-size: 1rem;
 }
+@media only screen and (max-width: 768px) {
+  .normal-size {
+    font-size: 0.75rem;
+  }
+}
 
 .small-size {
   font-size: 0.85rem;
 }
+@media only screen and (max-width: 768px) {
+  .small-size {
+    font-size: 0.75rem;
+  }
+}
 
 .xsmall-size {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
 }
 
 .free {
@@ -93,6 +113,12 @@ a {
   width: 50%;
   object-fit: cover;
 }
+@media only screen and (max-width: 768px) {
+  .product__img {
+    width: 100%;
+  }
+}
+
 .header {
   background-color: #FFE600;
 }

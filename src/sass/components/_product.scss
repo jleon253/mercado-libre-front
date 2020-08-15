@@ -10,8 +10,8 @@
   &__img{
     width: 50%;
     object-fit: cover;
-  }
-  &__description{
-    
+    @include media(mobile-only){
+      width: 100%;
+    }
   }
 }
