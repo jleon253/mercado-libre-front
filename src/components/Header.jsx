@@ -1,31 +1,30 @@
-import React, { useState, useContext } from 'react'
+import React, {useState} from 'react';
+import { useHistory, Link } from 'react-router-dom';
 
-import { ProductsContext } from '../context/ProductsContext'
-
-import logo from '../assets/mercado-libre-logo.svg'
-import iconSearch from '../assets/search.svg'
+import logo from '../assets/mercado-libre-logo.svg';
+import iconSearch from '../assets/search.svg';
 
 const Header = () => {
-	const { setQueryProduct } = useContext(ProductsContext)
-
-	const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('');
+  const history = useHistory();
 
 	const getValueInput = (e) => {
-		console.log(e.target.value)
-		setQuery(e.target.value)
-	}
+		setQuery(e.target.value);
+	};
 
 	const handlerSubmit = (e) => {
-    e.preventDefault()
-    setQueryProduct(query)
-	}
+    e.preventDefault();
+    history.push(`/items?search=${query}`);
+	};
 
 	return (
 		<header className='header py-3'>
 			<div className='container'>
 				<div className='row px-sm-1'>
 					<div className='col-3 col-md-2 px-sm-1 d-flex'>
-						<img src={logo} alt='Mercado Libre Logo' className='header__logo' />
+						<Link to="/" className='header__logo'>
+              <img src={logo} alt='Mercado Libre Logo' />
+            </Link>
 					</div>
 					<div className='col-9 col-md-10 px-sm-1'>
 						<form onSubmit={handlerSubmit}>

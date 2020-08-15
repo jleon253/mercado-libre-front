@@ -11,7 +11,6 @@ const Breadcrumbs = () => {
     if(breadcrumbs !== null) {
       if(breadcrumbs.length > 0) {
         setValues(breadcrumbs[0].values[0].path_from_root)
-        console.log('values',values);
       } else {
         setValues(null)
       }
@@ -19,8 +18,10 @@ const Breadcrumbs = () => {
   }, [breadcrumbs, values])
 
   return (
-    <div className="d-flex breadcrumbs">
-      {values ? values.map(value => (<a href="!#" key={value.id} className="breadcrumbs__item">{value.name}</a>)) : null}
+    <div className="col-12 my-3">
+      <div className="d-flex breadcrumbs">
+        {values ? values.map(value => (<a href="!#" key={value.id} className="breadcrumbs__item">{value.name}</a>)) : null}
+      </div>
     </div>
   );
 };

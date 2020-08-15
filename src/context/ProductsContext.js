@@ -11,12 +11,10 @@ const ProductsProvider = (props) => {
 
   useEffect(() => {
     if(queryProduct === '') return
-    console.log('valor:', queryProduct);
     const getAPIProducts = async () => {
       const url = `https://api.mercadolibre.com/sites/MLA/search?q=${queryProduct}`
       const answer = await fetch(url)
       const data = await answer.json()
-      console.log('Result API', data.results)
       setProductsList(data.results)
       setBreadcrumbs(data.filters)
       setPaging(data.paging.total)

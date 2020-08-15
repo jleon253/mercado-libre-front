@@ -1,7 +1,8 @@
 .header{
   background-color: $c-primary;
   &__logo{
-    width: 60%;
+    width: 80%;
+    display: flex;
     @include media(mobile-only){
       width: 100%;
     }

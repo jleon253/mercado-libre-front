@@ -136,7 +136,8 @@ a {
   background-color: #FFE600;
 }
 .header__logo {
-  width: 60%;
+  width: 80%;
+  display: flex;
 }
 @media only screen and (max-width: 768px) {
   .header__logo {
