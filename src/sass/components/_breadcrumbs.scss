@@ -1,7 +1,9 @@
 .breadcrumbs{
   color: $c-graydark;
   font-size: $f-small;
+  flex-wrap: wrap;
   &__item{
+    margin: 5px 0px;
     &:not(:last-child){
       &::after{
         content: '>';

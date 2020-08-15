@@ -1,4 +1,5 @@
 import React from 'react'
+import currency from 'currency.js'
 import freeIcon from '../assets/shipping.svg'
 
 const Product = ({ product }) => {
@@ -20,7 +21,7 @@ const Product = ({ product }) => {
 				</div>
 				<div className='col-8 product__description'>
 					<h1 className='big-size light'>{title}</h1>
-					<h2 className='bigger-size regular'>{price}</h2>
+					<h2 className='bigger-size regular'>{currency(price,{ precision: 0, separator: '.' }).format()}</h2>
 					{free ? (
             <p className='d-flex align-items-center small-size regular free'>
               Envio gratis
