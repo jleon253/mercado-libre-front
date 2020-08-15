@@ -6,10 +6,12 @@ import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 
 import ProductsProvider from './context/ProductsContext';
+import ProductDetailProvider from './context/ProductDetailContext';
 
 function App() {
   return (
     <ProductsProvider>
+      <ProductDetailProvider>
       <Router>
         <Header />
         <div className="container">
@@ -20,7 +22,8 @@ function App() {
             </Switch>
           </section>
         </div>
-      </Router>
+        </Router>
+      </ProductDetailProvider>
     </ProductsProvider>
   );
 }

@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
-import currency from 'currency.js'
-import freeIcon from '../assets/shipping.svg'
+import React, {Fragment} from 'react';
+import currency from 'currency.js';
+import freeIcon from '../assets/shipping.svg';
 
 const Product = ({ product }) => {
   let title, price, free, stateName;
