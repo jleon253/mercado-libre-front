@@ -29,3 +29,22 @@
 @mixin transition($prop,$time){
   transition: $prop $time ease-out;
 }
+
+@mixin button(){
+  @include b-radius(4px, 4px, 4px, 4px);
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: $f-normal;
+  font-weight: bold;
+  @include transition(box-shadow, 0.5s);
+  &:hover{
+    cursor: pointer;
+    @include shadow(1);
+  }
+}
+
+@mixin buttonSize($w:100%,$h:40px){
+  width: $w;
+  height: $h;
+}

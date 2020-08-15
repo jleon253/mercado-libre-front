@@ -1,3 +1,15 @@
 a{
   color: $c-graydark;
 }
+
+.btn{
+  @include button();
+  @include buttonSize();
+  &__primary{
+    background-color: $c-secondary;
+    color: $c-w;
+  }
+  &--small{
+    @include buttonSize(50%,20px);
+  }
+}

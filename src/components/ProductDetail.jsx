@@ -51,7 +51,7 @@ const ProductDetail = () => {
                       : (
                         <Fragment>
                           <p className="normal-size regular">Stock disponible</p>
-                          <button>Comprar Ahora</button>
+                          <button type="button" className="btn btn__primary">Comprar Ahora</button>
                         </Fragment>
                       )
                   }
