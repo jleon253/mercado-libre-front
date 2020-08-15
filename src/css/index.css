@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: #EEE;
   -webkit-font-smoothing: antialiased;
@@ -8,15 +12,87 @@ input, button {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.bigger-size {
+  font-size: 1.5rem;
+}
+
+.big-size {
+  font-size: 1.25rem;
+}
+
+.normal-size {
+  font-size: 1rem;
+}
+
+.small-size {
+  font-size: 0.85rem;
+}
+
+.xsmall-size {
+  font-size: 0.75rem;
+}
+
+.free {
+  color: #00a650;
+}
+
+a {
+  color: #666;
+}
+
 .breadcrumbs {
   color: #666;
-  font-size: 12px;
+  font-size: 0.85rem;
 }
 .breadcrumbs__item:not(:last-child)::after {
   content: ">";
   margin: 0px 10px;
 }
 
+.product {
+  background-color: #fff;
+  margin-bottom: 1px;
+}
+.product:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.product:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.product__img {
+  width: 50%;
+  object-fit: cover;
+}
 .header {
   background-color: #FFE600;
 }

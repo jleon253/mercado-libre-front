@@ -9,14 +9,16 @@ function App() {
   return (
     <ProductsProvider>
       <Header />
-      <section className="container">
-        <div className="row">
+      <div className="container">
+        <section className="row">
           <div className="col-12 my-3">
             <Breadcrumbs />
           </div>
-        </div>
-      </section>
-      <Products />
+        </section>
+        <section className="row">
+            <Products />
+        </section>
+      </div>
     </ProductsProvider>
   );
 }

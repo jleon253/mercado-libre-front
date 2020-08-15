@@ -20,7 +20,7 @@ const Breadcrumbs = () => {
 
   return (
     <div className="d-flex breadcrumbs">
-      {values ? values.map(value => (<a key={value.id} className="breadcrumbs__item">{value.name}</a>)) : null}
+      {values ? values.map(value => (<a href="!#" key={value.id} className="breadcrumbs__item">{value.name}</a>)) : null}
     </div>
   );
 };

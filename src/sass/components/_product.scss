@@ -1,0 +1,17 @@
+.product{
+  background-color: $c-w;
+  margin-bottom: 1px;
+  &:first-child{
+    @include b-radius(5px,5px,0,0);
+  }
+  &:last-child{
+    @include b-radius(0,0,5px,5px);
+  }
+  &__img{
+    width: 50%;
+    object-fit: cover;
+  }
+  &__description{
+    
+  }
+}
