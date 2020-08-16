@@ -81,6 +81,10 @@ a {
   color: #00a650;
 }
 
+.muted {
+  color: #666;
+}
+
 .margin-s1 {
   margin-left: 16px;
   margin-right: 16px;
@@ -213,8 +217,19 @@ a {
   background-color: #fff;
   box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.14), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
+.product-detail .carousel .slider-wrapper {
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .product-detail .carousel .slider-wrapper {
+    width: 90%;
+  }
+}
 .product-detail .carousel .slide {
   background: #fff;
+}
+.product-detail .carousel .thumb:hover {
+  cursor: pointer;
 }
 .product-detail__picture {
   width: 100%;
@@ -222,6 +237,9 @@ a {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.product-detail__picture img {
+  object-fit: contain;
 }
 .product-detail__title {
   font-size: 1.5rem;

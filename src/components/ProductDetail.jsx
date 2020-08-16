@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useContext} from 'react';
+import React, {Fragment, useEffect, useContext, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 
 import currency from 'currency.js';
@@ -11,9 +11,10 @@ import Breadcrumbs from './Breadcrumbs';
 
 const ProductDetail = () => {
 
-  const {details, setIdProduct} = useContext(ProductDetailContext);
+  const {details, description, setIdProduct} = useContext(ProductDetailContext);
   const history = useHistory();
   const params = useParams();
+  const [descriptionFormat, setDescriptionFormat] = useState('');
 
   const back = e => {
     e.preventDefault();
@@ -27,8 +28,10 @@ const ProductDetail = () => {
 
   useEffect(() => {
     // {title, price, sold_quantity, available_quantity, condition, pictures, shipping}
-    console.log('details', details);
-  }, [details]);
+    if(description === '') return;
+    setDescriptionFormat(description.replace(/\n/g, '<br/>'));
+    document.getElementById('description').innerHTML = descriptionFormat;
+  }, [description, descriptionFormat]);
 
 
   return (
@@ -53,8 +56,8 @@ const ProductDetail = () => {
                         ? <p>Sin imagenes</p>
                         : details.pictures.map(picture => {
                           return (
-                            <div className="product-detail__picture">
-                              <img src={picture.secure_url} alt={picture.id}/>
+                            <div key={picture.id} className="product-detail__picture">
+                              <img src={picture.secure_url} alt={picture.id} width="10px" />
                             </div>
                           );
                         })
@@ -85,6 +88,10 @@ const ProductDetail = () => {
                         </Fragment>
                       )
                   }
+                </div>
+                <div className="col-12 col-md-8 my-3 d-flex flex-column">
+                  <h3 className="bigger-size bold margin-s1-Y">Descripción</h3>
+                  <p id="description" className="margin-s1-Y big-size muted"></p>
                 </div>
               </div>
             </div>

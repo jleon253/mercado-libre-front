@@ -27,8 +27,19 @@
   background-color: $c-w;
   @include shadow(1);
   .carousel{
+    .slider-wrapper{
+      width: 50%;
+      @include media(mobile-only){
+        width: 90%;
+      }
+    }
     .slide{
       background: $c-w;
+    }
+    .thumb{
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
   &__picture{
@@ -37,6 +48,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    img{
+      object-fit: contain;
+    }
   }
   &__title{
     font-size: $f-normal * 1.5;
