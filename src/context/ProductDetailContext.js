@@ -15,8 +15,8 @@ const ProductDetailProvider = (props) => {
       const answer = await fetch(url);
       const data = await answer.json();
       console.log(data);
-      let {title, price, sold_quantity, available_quantity, condition, pictures} = data;
-      setDetails({title, price, sold_quantity, available_quantity, condition, pictures});
+      let {title, price, sold_quantity, available_quantity, condition, pictures, shipping} = data;
+      setDetails({title, price, sold_quantity, available_quantity, condition, pictures, shipping});
     };
     getAPIDetails();
   }, [idProduct]);

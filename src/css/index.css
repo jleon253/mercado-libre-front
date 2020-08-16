@@ -14,6 +14,7 @@ input, button {
 
 a {
   text-decoration: none;
+  color: #666;
 }
 
 * {
@@ -80,8 +81,62 @@ a {
   color: #00a650;
 }
 
-a {
-  color: #666;
+.margin-s1 {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.margin-s1-X {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.margin-s1-Y {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.margin-s2 {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.margin-s2-X {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.margin-s2-Y {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.padding-s1 {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.padding-s1-X {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.padding-s1-Y {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.padding-s2 {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.padding-s2-X {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.padding-s2-Y {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .btn {
@@ -123,6 +178,11 @@ a {
   margin: 0px 10px;
 }
 
+.free__icon {
+  width: 15px;
+  margin-left: 5px;
+}
+
 .product {
   background-color: #fff;
   margin-bottom: 1px;
@@ -148,14 +208,26 @@ a {
     width: 100%;
   }
 }
-.product .free__icon {
-  width: 15px;
-  margin-left: 5px;
-}
 
 .product-detail {
   background-color: #fff;
   box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.14), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+.product-detail .carousel .slide {
+  background: #fff;
+}
+.product-detail__picture {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.product-detail__title {
+  font-size: 1.5rem;
+}
+.product-detail__price {
+  font-size: 3rem;
 }
 
 .message {
@@ -174,6 +246,9 @@ a {
   .header__logo {
     width: 100%;
   }
+}
+.header__logo img {
+  width: 100%;
 }
 
 .search {

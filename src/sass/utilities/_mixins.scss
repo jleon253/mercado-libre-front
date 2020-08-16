@@ -26,9 +26,12 @@
 }
 
 //------ Transition -------
+
 @mixin transition($prop,$time){
   transition: $prop $time ease-out;
 }
+
+//------ Button -------
 
 @mixin button(){
   @include b-radius(4px, 4px, 4px, 4px);
@@ -47,4 +50,17 @@
 @mixin buttonSize($w:100%,$h:40px){
   width: $w;
   height: $h;
+}
+
+//------ Spacing -------
+
+@mixin space($value: 0px,$type: margin, $x: false, $y: false){
+  @if $x {
+    #{$type}-left: $value;
+    #{$type}-right: $value;
+  }
+  @if $y {
+    #{$type}-top: $value;
+    #{$type}-bottom: $value;
+  }
 }

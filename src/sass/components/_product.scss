@@ -1,3 +1,10 @@
+.free{
+  &__icon{
+    width: 15px;
+    margin-left: 5px;
+  }
+}
+
 .product{
   background-color: $c-w;
   margin-bottom: 1px;
@@ -14,15 +21,27 @@
       width: 100%;
     }
   }
-  .free{
-    &__icon{
-      width: 15px;
-      margin-left: 5px;
-    }
-  }
 }
 
 .product-detail{
   background-color: $c-w;
   @include shadow(1);
+  .carousel{
+    .slide{
+      background: $c-w;
+    }
+  }
+  &__picture{
+    width: 100%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__title{
+    font-size: $f-normal * 1.5;
+  }
+  &__price{
+    font-size: $f-normal * 3;
+  }
 }
