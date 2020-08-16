@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useContext, useState} from 'react';
+import React, {Fragment, useEffect, useContext} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 
 import currency from 'currency.js';
@@ -11,27 +11,24 @@ import Breadcrumbs from './Breadcrumbs';
 
 const ProductDetail = () => {
 
-  const {details, description, setIdProduct} = useContext(ProductDetailContext);
+  const {details, description, setIdProduct, setDetails} = useContext(ProductDetailContext);
   const history = useHistory();
   const params = useParams();
-  const [descriptionFormat, setDescriptionFormat] = useState('');
 
   const back = e => {
     e.preventDefault();
     history.goBack();
   };
 
+  const stringToHtml = () => {
+    return {__html: description.replace(/\n/g, '</br>')};
+  };
+
   useEffect(() => {
     console.log(params);
     setIdProduct(params.id);
+    setDetails({});
   }, [params]);
-
-  useEffect(() => {
-    // {title, price, sold_quantity, available_quantity, condition, pictures, shipping}
-    if(description === '') return;
-    setDescriptionFormat(description.replace(/\n/g, '<br/>'));
-    document.getElementById('description').innerHTML = descriptionFormat;
-  }, [description, descriptionFormat]);
 
 
   return (
@@ -91,7 +88,9 @@ const ProductDetail = () => {
                 </div>
                 <div className="col-12 col-md-8 my-3 d-flex flex-column">
                   <h3 className="bigger-size bold margin-s1-Y">Descripción</h3>
-                  <p id="description" className="margin-s1-Y big-size muted"></p>
+                  <div className="margin-s1-Y big-size muted">
+                    <p dangerouslySetInnerHTML={stringToHtml()} />
+                  </div>
                 </div>
               </div>
             </div>

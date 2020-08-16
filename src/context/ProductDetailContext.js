@@ -21,8 +21,6 @@ const ProductDetailProvider = (props) => {
         .catch(err => console.error(err));
       const dataDetail = await resDetail.json().then(data => data);
       const dataDescription = await resDescription.json().then(data => data);
-      console.log('dataDetail',dataDetail);
-      console.log('dataDescription',dataDescription);
 
       let {title, price, sold_quantity, available_quantity, condition, pictures, shipping} = dataDetail;
       setDetails({title, price, sold_quantity, available_quantity, condition, pictures, shipping});
@@ -35,7 +33,8 @@ const ProductDetailProvider = (props) => {
     <ProductDetailContext.Provider value={{
       details,
       description,
-      setIdProduct
+      setIdProduct,
+      setDetails
     }}>
       {props.children}
     </ProductDetailContext.Provider>
