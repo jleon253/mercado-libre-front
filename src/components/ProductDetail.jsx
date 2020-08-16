@@ -2,16 +2,16 @@ import React, {Fragment, useEffect, useContext} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 
 import currency from 'currency.js';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {Carousel} from 'react-responsive-carousel';
+import Carousel from 'react-elastic-carousel';
 import freeIcon from '../assets/shipping.svg';
+import imageNotAvailable from '../assets/imageNotAvailable.png';
 
 import {ProductDetailContext} from '../context/ProductDetailContext';
 import Breadcrumbs from './Breadcrumbs';
 
 const ProductDetail = () => {
 
-  const {details, description, setIdProduct, setDetails} = useContext(ProductDetailContext);
+  const {details, description, setIdProduct} = useContext(ProductDetailContext);
   const history = useHistory();
   const params = useParams();
 
@@ -25,9 +25,7 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    console.log(params);
     setIdProduct(params.id);
-    setDetails({});
   }, [params]);
 
 
@@ -46,15 +44,14 @@ const ProductDetail = () => {
             <div className="col-12 my-3">
               <div className="row p-3 product-detail">
                 <div className="col-12 col-md-8">
-                  {/* Carousel */}
-                  <Carousel>
+                  <Carousel itemsToShow={1}>
                     {
                       (details.pictures.length === 0)
-                        ? <p>Sin imagenes</p>
+                        ? <img src={imageNotAvailable} alt="imageNotAvailable" />
                         : details.pictures.map(picture => {
                           return (
-                            <div key={picture.id} className="product-detail__picture">
-                              <img src={picture.secure_url} alt={picture.id} width="10px" />
+                            <div key={picture.id}>
+                              <img src={picture.secure_url} alt={picture.id} width="100%" />
                             </div>
                           );
                         })

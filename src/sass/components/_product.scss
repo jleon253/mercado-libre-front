@@ -26,30 +26,38 @@
 .product-detail{
   background-color: $c-w;
   @include shadow(1);
-  .carousel{
-    .slider-wrapper{
-      width: 50%;
-      @include media(mobile-only){
-        width: 90%;
+  .rec.rec-carousel-wrapper{
+    .rec-carousel{
+      .rec-arrow{
+        background-color: $c-light;
+        box-shadow: none;
+        &:hover{
+          background-color: $c-secondary;
+          color: $c-w;
+          @include shadow(2);
+        }
+        &:disabled{
+          opacity: .3;
+        }
+      }
+      .rec-slider{
+        > div{
+          display: flex;
+          align-items: center;
+        }
       }
     }
-    .slide{
-      background: $c-w;
-    }
-    .thumb{
-      &:hover{
-        cursor: pointer;
+    .rec-pagination{
+      .rec-dot{
+        width: 15px;
+        height: 15px;
+        background-color: $c-light;
+        box-shadow: none;
+        &_active{
+          @include shadow(1);
+          background-color: $c-secondary;
+        }
       }
-    }
-  }
-  &__picture{
-    width: 100%;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    img{
-      object-fit: contain;
     }
   }
   &__title{

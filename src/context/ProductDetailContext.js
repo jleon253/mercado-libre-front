@@ -10,6 +10,7 @@ const ProductDetailProvider = (props) => {
 
   useEffect(() => {
     if(idProduct === '') return;
+    setDetails({});
     const getAPIDetails = async () => {
       console.log('Llamando API Detalle de Producto...');
       const url1 = `https://api.mercadolibre.com/items/${idProduct}`;
@@ -22,8 +23,7 @@ const ProductDetailProvider = (props) => {
       const dataDetail = await resDetail.json().then(data => data);
       const dataDescription = await resDescription.json().then(data => data);
 
-      let {title, price, sold_quantity, available_quantity, condition, pictures, shipping} = dataDetail;
-      setDetails({title, price, sold_quantity, available_quantity, condition, pictures, shipping});
+      setDetails(dataDetail);
       setDescription(dataDescription.plain_text);
     };
     getAPIDetails();
