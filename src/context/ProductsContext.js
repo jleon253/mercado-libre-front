@@ -17,9 +17,9 @@ const ProductsProvider = (props) => {
     setBreadcrumbs([]);
     setPaging(null);
     const getAPIProducts = async () => {
-    console.log('Llamando API Lista de Productos...');
+      console.log('Llamando API Lista de Productos...');
       try {
-        const url = `http://localhost:4000/api/items?q=${queryProduct}`;
+        const url = `${process.env.REACT_APP_SERVER_URL}/api/items?q=${queryProduct}`;
         const answer = await fetch(url);
         const data = await answer.json();
         console.log('API Lista de Productos Respondio');

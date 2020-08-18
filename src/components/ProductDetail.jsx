@@ -30,6 +30,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     setIdProduct(params.id);
+    // eslint-disable-next-line
   }, [params]);
 
 

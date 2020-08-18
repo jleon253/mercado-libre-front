@@ -13,7 +13,7 @@ const ProductDetailProvider = (props) => {
     const getAPIDetails = async () => {
       console.log('Llamando API Detalle de Producto...');
       try {
-        const url = `http://localhost:4000/api/items/${idProduct}`;
+        const url = `${process.env.REACT_APP_SERVER_URL}/api/items/${idProduct}`;
         const answer = await fetch(url);
         const data = await answer.json();
         console.log('API Detalle de Producto Respondio');

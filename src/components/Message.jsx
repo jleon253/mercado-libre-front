@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Message = ({msg}) => {
   return (
@@ -6,6 +7,10 @@ const Message = ({msg}) => {
       <h1 className="text-center bigger-size bold">{msg}</h1>
     </div>
   );
+};
+
+Message.propTypes = {
+  msg: PropTypes.string.isRequired
 };
 
 export default Message;

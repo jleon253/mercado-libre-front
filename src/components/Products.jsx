@@ -14,6 +14,7 @@ const Products = () => {
   useEffect(() => {
     const values = queryString.parse(location.search);
     setQueryProduct(values.search);
+    // eslint-disable-next-line
   },[location]);
 
   return (

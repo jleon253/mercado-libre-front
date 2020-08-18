@@ -9,6 +9,7 @@ import ProductsProvider from './context/ProductsContext';
 import ProductDetailProvider from './context/ProductDetailContext';
 
 function App() {
+  console.log('Conectado a:',process.env.REACT_APP_SERVER_URL);
   return (
     <ProductsProvider>
       <ProductDetailProvider>

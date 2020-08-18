@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import currency from 'currency.js';
 import freeIcon from '../assets/shipping.svg';
+import PropTypes from 'prop-types';
 
 const Product = ({product}) => {
   let {id, title, price, picture, condition, free_shipping, seller_city} = product;
@@ -31,5 +32,9 @@ const Product = ({product}) => {
 		</Fragment>
 	)
 }
+
+Product.propTypes = {
+  product: PropTypes.object.isRequired
+};
 
 export default Product
