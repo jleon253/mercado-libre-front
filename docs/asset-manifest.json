@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "./static/css/main.1fca467a.chunk.css",
+    "main.js": "./static/js/main.d2a9fd7f.chunk.js",
+    "main.js.map": "./static/js/main.d2a9fd7f.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.6ffeff12.js",
+    "runtime-main.js.map": "./static/js/runtime-main.6ffeff12.js.map",
+    "static/css/2.bc96f549.chunk.css": "./static/css/2.bc96f549.chunk.css",
+    "static/js/2.e2ef8a6b.chunk.js": "./static/js/2.e2ef8a6b.chunk.js",
+    "static/js/2.e2ef8a6b.chunk.js.map": "./static/js/2.e2ef8a6b.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.5c323684203d13906c71e4c0c6fe044c.js": "./precache-manifest.5c323684203d13906c71e4c0c6fe044c.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.bc96f549.chunk.css.map": "./static/css/2.bc96f549.chunk.css.map",
+    "static/css/main.1fca467a.chunk.css.map": "./static/css/main.1fca467a.chunk.css.map",
+    "static/js/2.e2ef8a6b.chunk.js.LICENSE.txt": "./static/js/2.e2ef8a6b.chunk.js.LICENSE.txt",
+    "static/media/mercado-libre-logo.svg": "./static/media/mercado-libre-logo.f63dc0b4.svg",
+    "static/media/search.svg": "./static/media/search.a7f473ae.svg",
+    "static/media/shipping.svg": "./static/media/shipping.fcda875e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ffeff12.js",
+    "static/css/2.bc96f549.chunk.css",
+    "static/js/2.e2ef8a6b.chunk.js",
+    "static/css/main.1fca467a.chunk.css",
+    "static/js/main.d2a9fd7f.chunk.js"
+  ]
+}
