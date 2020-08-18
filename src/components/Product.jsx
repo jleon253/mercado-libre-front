@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import currency from 'currency.js';
-import freeIcon from '../assets/shipping.svg';
 import PropTypes from 'prop-types';
 
 const Product = ({product}) => {
@@ -22,7 +21,6 @@ const Product = ({product}) => {
 					{free_shipping ? (
             <p className='d-flex align-items-center small-size regular free'>
               Envio gratis
-              <img src={freeIcon} alt="Envio gratis icono" className="free__icon" />
             </p>
 					) : null}
 					<p className='small-size light'>{condition}</p>

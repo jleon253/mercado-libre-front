@@ -2,7 +2,7 @@
   "name": "mercado-libre-front",
   "version": "0.1.0",
   "description": "Front para mercado-libre-test",
-  "homepage": "https://jleon253.github.io/mercado-libre-front",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

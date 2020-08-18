@@ -3,7 +3,6 @@ import {useHistory, useParams} from 'react-router-dom';
 
 import currency from 'currency.js';
 import Carousel from 'react-elastic-carousel';
-import freeIcon from '../assets/shipping.svg';
 import imageNotAvailable from '../assets/imageNotAvailable.png';
 
 import {ProductsContext} from '../context/ProductsContext';
@@ -79,7 +78,6 @@ const ProductDetail = () => {
                               : (
                                 <p className='d-flex align-items-center small-size regular free'>
                                   Envio gratis
-                                  <img src={freeIcon} alt="Envio gratis icono" className="free__icon" />
                                 </p>
                               )
                           }
