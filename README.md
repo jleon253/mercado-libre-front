@@ -5,7 +5,7 @@ This project is a technical test for Job as Front End Developer in Mercado Libre
 This repository is Front End Part of Main Project
 > The Server Part is located in: https://github.com/jleon253/mercado-libre-server
 
-Demo:
+Demo: https://jleon253.github.io/mercado-libre-front/
 
 ### Dev tools used:
 > - HTML, CSS (SASS), SVG
