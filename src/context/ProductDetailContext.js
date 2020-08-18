@@ -6,25 +6,21 @@ const ProductDetailProvider = (props) => {
 
   const [idProduct, setIdProduct] = useState('');
   const [details, setDetails] = useState({});
-  const [description, setDescription] = useState('');
 
   useEffect(() => {
     if(idProduct === '') return;
     setDetails({});
     const getAPIDetails = async () => {
       console.log('Llamando API Detalle de Producto...');
-      const url1 = `https://api.mercadolibre.com/items/${idProduct}`;
-      const url2 = `https://api.mercadolibre.com/items/${idProduct}/description`;
-      const promises = [fetch(url1), fetch(url2)];
-      const [resDetail, resDescription] = await Promise
-        .all(promises)
-        .then(responses => responses )
-        .catch(err => console.error(err));
-      const dataDetail = await resDetail.json().then(data => data);
-      const dataDescription = await resDescription.json().then(data => data);
-
-      setDetails(dataDetail);
-      setDescription(dataDescription.plain_text);
+      try {
+        const url = `http://localhost:4000/api/items/${idProduct}`;
+        const answer = await fetch(url);
+        const data = await answer.json();
+        console.log('API Detalle de Producto Respondio');
+        setDetails(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     getAPIDetails();
   }, [idProduct]);
@@ -32,7 +28,6 @@ const ProductDetailProvider = (props) => {
   return (
     <ProductDetailContext.Provider value={{
       details,
-      description,
       setIdProduct,
       setDetails
     }}>

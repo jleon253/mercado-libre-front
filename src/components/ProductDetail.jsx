@@ -6,18 +6,22 @@ import Carousel from 'react-elastic-carousel';
 import freeIcon from '../assets/shipping.svg';
 import imageNotAvailable from '../assets/imageNotAvailable.png';
 
+import {ProductsContext} from '../context/ProductsContext';
 import {ProductDetailContext} from '../context/ProductDetailContext';
 import Breadcrumbs from './Breadcrumbs';
 
 const ProductDetail = () => {
 
-  const {details, description, setIdProduct} = useContext(ProductDetailContext);
+  const {queryAnswer} = useContext(ProductsContext);
+  const {details, setIdProduct} = useContext(ProductDetailContext);
   const history = useHistory();
   const params = useParams();
 
+  const {title,price,pictures,condition,free_shipping,available_quantity,sold_quantity,description} = details;
+
   const back = e => {
     e.preventDefault();
-    history.goBack();
+    history.push(`/items?search=${queryAnswer}`);
   };
 
   const stringToHtml = () => {
@@ -46,9 +50,9 @@ const ProductDetail = () => {
                 <div className="col-12 col-md-8">
                   <Carousel itemsToShow={1}>
                     {
-                      (details.pictures.length === 0)
+                      (pictures.length === 0)
                         ? <img src={imageNotAvailable} alt="imageNotAvailable" />
-                        : details.pictures.map(picture => {
+                        : pictures.map(picture => {
                           return (
                             <div key={picture.id}>
                               <img src={picture.secure_url} alt={picture.id} width="100%" />
@@ -59,17 +63,17 @@ const ProductDetail = () => {
                   </Carousel>
                 </div>
                 <div className="col-12 col-md-4 mt-4">
-                  <small className="small-size light">{details.condition} - {details.sold_quantity} vendidos</small>
-                  <h1 className="product-detail__title bold">{details.title}</h1>
-                  <h2 className="margin-s2-Y product-detail__price light">{currency(details.price, {precision: 0, separator: '.'}).format()}</h2>
+                  <small className="small-size light">{condition} - {sold_quantity} vendidos</small>
+                  <h1 className="product-detail__title bold">{title}</h1>
+                  <h2 className="margin-s2-Y product-detail__price light">{currency(price.amount, {precision: 0, separator: '.'}).format()} <small className="normal-size bold">{price.currency}</small></h2>
                   {
-                    (details.available_quantity === 0)
+                    (available_quantity === 0)
                       ? null
                       : (
                         <Fragment>
                           <p className="normal-size regular">Stock disponible</p>
                           {
-                            (!details.shipping.free_shipping)
+                            (!free_shipping)
                               ? null
                               : (
                                 <p className='d-flex align-items-center small-size regular free'>

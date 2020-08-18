@@ -5,17 +5,17 @@ import {ProductsContext} from '../context/ProductsContext';
 const Breadcrumbs = () => {
 
   const {breadcrumbs} = useContext(ProductsContext);
-  const [values, setValues] = useState([])
+  const [values, setValues] = useState([]);
 
   useEffect(() => {
     if(breadcrumbs !== null) {
       if(breadcrumbs.length > 0) {
-        setValues(breadcrumbs[0].values[0].path_from_root)
+        setValues(breadcrumbs);
       } else {
-        setValues(null)
+        setValues(null);
       }
     }
-  }, [breadcrumbs, values])
+  }, [breadcrumbs, values]);
 
   return (
     <div className="d-flex breadcrumbs">

@@ -12,15 +12,24 @@ const ProductsProvider = (props) => {
 
   useEffect(() => {
     if(queryProduct === '') return;
+    setProductsList([]);
+    setQueryAnswer('');
+    setBreadcrumbs([]);
+    setPaging(null);
     const getAPIProducts = async () => {
-      console.log('Llamando API Lista de Productos...');
-      const url = `https://api.mercadolibre.com/sites/MLA/search?q=${queryProduct}`;
-      const answer = await fetch(url);
-      const data = await answer.json();
-      setQueryAnswer(data.query);
-      setProductsList(data.results);
-      setBreadcrumbs(data.filters);
-      setPaging(data.paging.total);
+    console.log('Llamando API Lista de Productos...');
+      try {
+        const url = `http://localhost:4000/api/items?q=${queryProduct}`;
+        const answer = await fetch(url);
+        const data = await answer.json();
+        console.log('API Lista de Productos Respondio');
+        setQueryAnswer(data.query);
+        setProductsList(data.items);
+        setBreadcrumbs(data.categories);
+        setPaging(data.items.length);
+      } catch (error) {
+        console.error(error);
+      }
     };
     getAPIProducts();
   }, [queryProduct]);
