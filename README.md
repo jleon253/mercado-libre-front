@@ -1,4 +1,21 @@
+# Mercado-Libre-Front
+
+This project is a technical test for Job as Front End Developer in Mercado Libre Colombia.
+
+This repository is Front End Part of Main Project
+> The Server Part is located in: https://github.com/jleon253/mercado-libre-server
+
+Demo:
+
+### Dev tools used:
+> - HTML, CSS (SASS), SVG
+> - ES6, React.js (Context, React Router & Hooks), Fetch API
+> - **NPM Dependencies:** currency.js, query-string, react-elastic-carousel, react-router-dom, bootstrap-4-grid, normalize.css
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
